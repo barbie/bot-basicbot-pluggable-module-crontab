@@ -23,6 +23,7 @@ use Time::Crontab;
 
 my @crontab;
 my $load_time = 0;
+my $last_run;
 
 #----------------------------------------------------------------------------
 
@@ -39,6 +40,7 @@ sub init {
         $file =~ s/\.pl$/.cron/;
     }
 
+    $last_run = DateTime->now;
     $self->store->set( 'crontab', 'file', $file );
 }
  
@@ -48,6 +50,10 @@ sub help {
  
 sub tick {
     my $self = shift;
+
+    # Shortcut the tick if its still the same minute as last time
+    return if $last_run->minute == DateTime->now->minute;
+    $last_run = DateTime->now;
 
     $self->_load_cron();
 
@@ -65,7 +71,7 @@ sub tick {
         );
     }
 
-    return 60 - DateTime->now->second; # ensure we are running each minute
+    return; # return value is ignored
 }
 
 #############################################################################
