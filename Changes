@@ -1,5 +1,8 @@
 Revision history for Bot-BasicBot-Pluggable-Module-Crontab
 ==========================================================
 
+Next release
+        - GH-#1 Fix issue with tick triggering every time
+
 0.01    2015-04-26
         - original release;
