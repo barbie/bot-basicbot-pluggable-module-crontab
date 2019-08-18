@@ -50,14 +50,15 @@ sub tick {
     my $self = shift;
 
     $self->_load_cron();
+    my $wkno = DateTime->now->week_number;
 
     for my $cron (@crontab) {
         next unless($cron->{tab}->match(time));
         next unless(
                 $cron->{weekno} eq '*' 
-            || ($cron->{modulus} && $cron->{result} == (DateTime->now->week_number % $cron->{modulus})
-            || ($cron->{weekno} =~ /^\d+$/ && DateTime->now->week_number == $cron->{weekno})
-            ));
+            || ( $cron->{modulus} && $cron->{result} == ($wkno % $cron->{modulus}) )
+            || ( $cron->{weekno} =~ /^\d+$/ && $wkno == $cron->{weekno} )
+        );
 
         $self->say(
             channel => $cron->{channel},
