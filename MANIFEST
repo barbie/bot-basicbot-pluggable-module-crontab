@@ -1,4 +1,6 @@
 Changes
+examples/robobarbie.cron
+examples/robobarbie.pl
 lib/Bot/BasicBot/Pluggable/Module/Crontab.pm
 LICENSE
 Makefile.PL
