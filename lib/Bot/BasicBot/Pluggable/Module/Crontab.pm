@@ -3,7 +3,7 @@ package Bot::BasicBot::Pluggable::Module::Crontab;
 use warnings;
 use strict;
 
-our $VERSION = '0.01';
+our $VERSION = '1.00';
  
 #----------------------------------------------------------------------------
 
@@ -224,7 +224,7 @@ when the bot is initiated. For example:
 
 =head1 COPYRIGHT AND LICENSE
 
-  Copyright (C) 2015 Barbie for Miss Barbell Productions
+  Copyright (C) 2015-2019 Barbie for Miss Barbell Productions
 
   This distribution is free software; you can redistribute it and/or
   modify it under the Artistic License v2.

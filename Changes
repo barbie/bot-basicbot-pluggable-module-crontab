@@ -1,6 +1,7 @@
 Revision history for Bot-BasicBot-Pluggable-Module-Crontab
 ==========================================================
 
+1.00    2019-08-18
         - fixes suggested by Kritika.io.
         - determine week number once.
         - extended test suite.

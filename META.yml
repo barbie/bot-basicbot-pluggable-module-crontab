@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:                Bot-BasicBot-Pluggable-Module-Crontab
-version:             0.01
+version:             1.00
 abstract:            Provides a crontab-like message service for IRC channels
 license:             artistic_2
 distribution_type:   module
@@ -26,7 +26,7 @@ build_requires:
 provides:
   Bot::BasicBot::Pluggable::Module::Crontab:
     file:     lib/Bot/BasicBot/Pluggable/Module/Crontab.pm
-    version:  0.01
+    version:  1.00
 
 no_index:
   directory:
