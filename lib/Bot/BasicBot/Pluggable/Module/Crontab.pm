@@ -92,14 +92,14 @@ sub _load_cron {
         next if($line =~ /^#/); # ignore comment lines
         next if($line =~ /^$/); # ignore blank lines
 
-        my @fields = split(' ',$line,8);
+        my @fields = split(/ /,$line,8);
         my $crontab = join(' ',(@fields)[0..4]);
         my $tab;
         eval { $tab = Time::Crontab->new($crontab) };
         next if($@);
 
         my ($modulus,$result);
-        ($modulus,$result) = split('/',$fields[5],2)    if($fields[5] =~ m!^\d+/\d+!);
+        ($modulus,$result) = split(/\//,$fields[5],2)    if($fields[5] =~ m!^\d+/\d+!);
 
         push @crontab, {
             tab     => $tab,
