@@ -22,6 +22,7 @@ WriteMakefile(
 
         # build/test prereqs
         'File::Temp'                => '0',
+        'FindBin::libs'             => '0',
         'Test::MockModule'          => '0',
         'Test::More'                => '0.70'
 
