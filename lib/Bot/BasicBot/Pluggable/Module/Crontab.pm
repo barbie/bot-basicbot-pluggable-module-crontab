@@ -3,7 +3,7 @@ package Bot::BasicBot::Pluggable::Module::Crontab;
 use warnings;
 use strict;
 
-our $VERSION = '1.00';
+our $VERSION = '1.01';
  
 #----------------------------------------------------------------------------
 
